@@ -1,0 +1,37 @@
+Configure miss: x86_64-generic-linux-gnu-clang++
+Configure miss: g++ option to enable C++11 features
+Configure miss: whether g++ supports _Bool type
+Configure miss: crtdefs.h
+Configure miss: fpurge
+Configure miss: st_dm_mode in struct stat
+Configure miss: whether strmode is declared
+Configure miss: whether fflush works on input streams
+Configure miss: whether printf supports the 'n' directive
+Configure miss: whether fpurge is declared
+Configure miss: _fseeki64
+Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
+Configure miss: whether mbswidth is declared in <wchar.h>
+Configure miss: __mktime_internal
+Configure miss: struct msghdr.msg_accrights
+Configure miss: whether localtime loops forever near extrema
+Configure miss: timezone_t
+Configure miss: whether tzset clobbers localtime buffer
+Configure miss: whether snprintf fully supports the 'n' directive
+Configure miss: library containing res_9_search
+Configure miss: library containing res_search
+Configure miss: ncurses/curses.h usability
+Configure miss: ncurses/curses.h presence
+Configure miss: ncurses/curses.h
+Configure miss: ncurses/term.h usability
+Configure miss: ncurses/term.h presence
+Configure miss: ncurses/term.h
+Configure miss: _getpty
+Configure miss: idn2.h usability
+Configure miss: idn2.h presence
+Configure miss: idn2.h
+Configure miss: if Libidn2 should be used
+Configure miss: varargs.h
+Configure miss: socks.h
+Configure miss: if trio library is needed
+Configure miss: getipnodebyname
+Configure miss: dn_expand

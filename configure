@@ -1,0 +1,12 @@
+   --disable-rpath
+   --disable-silent-rules 
+   --enable-largefile 
+   --with-debug 
+   --with-expat 
+   --with-libidn2 
+   --with-modules 
+   --with-openssl 
+   --with-pager=/usr/bin/less 
+   --without-gnutls 
+   --without-included-regex 
+   --without-profiling 

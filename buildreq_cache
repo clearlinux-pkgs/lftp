@@ -1,0 +1,9 @@
+4.8.4
+bison
+expat-dev
+glibc-locale
+ncurses-dev
+openssl-dev
+pkgconfig(ncurses)
+pkgconfig(zlib)
+zlib-dev
