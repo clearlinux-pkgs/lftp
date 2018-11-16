@@ -1,4 +1,3 @@
-Configure miss: x86_64-generic-linux-gnu-clang++
 Configure miss: g++ option to enable C++11 features
 Configure miss: whether g++ supports _Bool type
 Configure miss: crtdefs.h

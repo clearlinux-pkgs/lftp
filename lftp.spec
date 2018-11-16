@@ -6,19 +6,19 @@
 #
 Name     : lftp
 Version  : 4.8.4
-Release  : 2
+Release  : 3
 URL      : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz
 Source0  : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz
 Source99 : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz.asc
 Summary  : Sophisticated CLI file transfer program
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-2.0
-Requires: lftp-bin
-Requires: lftp-lib
-Requires: lftp-data
-Requires: lftp-license
-Requires: lftp-locales
-Requires: lftp-man
+Requires: lftp-bin = %{version}-%{release}
+Requires: lftp-data = %{version}-%{release}
+Requires: lftp-lib = %{version}-%{release}
+Requires: lftp-license = %{version}-%{release}
+Requires: lftp-locales = %{version}-%{release}
+Requires: lftp-man = %{version}-%{release}
 BuildRequires : bison
 BuildRequires : expat-dev
 BuildRequires : glibc-locale
@@ -39,9 +39,9 @@ There is also support for secure variants of FTP and HTTP.
 %package bin
 Summary: bin components for the lftp package.
 Group: Binaries
-Requires: lftp-data
-Requires: lftp-license
-Requires: lftp-man
+Requires: lftp-data = %{version}-%{release}
+Requires: lftp-license = %{version}-%{release}
+Requires: lftp-man = %{version}-%{release}
 
 %description bin
 bin components for the lftp package.
@@ -58,10 +58,10 @@ data components for the lftp package.
 %package dev
 Summary: dev components for the lftp package.
 Group: Development
-Requires: lftp-lib
-Requires: lftp-bin
-Requires: lftp-data
-Provides: lftp-devel
+Requires: lftp-lib = %{version}-%{release}
+Requires: lftp-bin = %{version}-%{release}
+Requires: lftp-data = %{version}-%{release}
+Provides: lftp-devel = %{version}-%{release}
 
 %description dev
 dev components for the lftp package.
@@ -70,8 +70,8 @@ dev components for the lftp package.
 %package lib
 Summary: lib components for the lftp package.
 Group: Libraries
-Requires: lftp-data
-Requires: lftp-license
+Requires: lftp-data = %{version}-%{release}
+Requires: lftp-license = %{version}-%{release}
 
 %description lib
 lib components for the lftp package.
@@ -109,7 +109,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534475231
+export SOURCE_DATE_EPOCH=1542400769
 %configure --disable-static --disable-rpath \
 --disable-silent-rules \
 --enable-largefile \
@@ -125,11 +125,11 @@ export SOURCE_DATE_EPOCH=1534475231
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1534475231
+export SOURCE_DATE_EPOCH=1542400769
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/lftp
-cp COPYING %{buildroot}/usr/share/doc/lftp/COPYING
-cp lib/COPYING.LIB %{buildroot}/usr/share/doc/lftp/lib_COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/lftp
+cp COPYING %{buildroot}/usr/share/package-licenses/lftp/COPYING
+cp lib/COPYING.LIB %{buildroot}/usr/share/package-licenses/lftp/lib_COPYING.LIB
 %make_install
 %find_lang lftp
 
@@ -174,12 +174,12 @@ cp lib/COPYING.LIB %{buildroot}/usr/share/doc/lftp/lib_COPYING.LIB
 /usr/lib64/liblftp-tasks.so.0.0.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/lftp/COPYING
-/usr/share/doc/lftp/lib_COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/lftp/COPYING
+/usr/share/package-licenses/lftp/lib_COPYING.LIB
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/lftp.1
 /usr/share/man/man1/lftpget.1
 /usr/share/man/man5/lftp.conf.5
