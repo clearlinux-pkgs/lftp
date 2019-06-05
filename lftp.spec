@@ -6,7 +6,7 @@
 #
 Name     : lftp
 Version  : 4.8.4
-Release  : 3
+Release  : 4
 URL      : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz
 Source0  : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz
 Source99 : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz.asc
