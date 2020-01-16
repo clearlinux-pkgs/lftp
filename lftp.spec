@@ -5,12 +5,12 @@
 # Source0 file verified with key 0xA824BB69F2A99A18 (lav@yars.free.net)
 #
 Name     : lftp
-Version  : 4.8.4
-Release  : 5
-URL      : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz
-Source0  : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz
-Source99 : http://lftp.yar.ru/ftp/lftp-4.8.4.tar.xz.asc
-Summary  : Sophisticated CLI file transfer program
+Version  : 4.9.1
+Release  : 6
+URL      : http://lftp.yar.ru/ftp/lftp-4.9.1.tar.xz
+Source0  : http://lftp.yar.ru/ftp/lftp-4.9.1.tar.xz
+Source1  : http://lftp.yar.ru/ftp/lftp-4.9.1.tar.xz.asc
+Summary  : Sophisticated command line based FTP client
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-2.0
 Requires: lftp-bin = %{version}-%{release}
@@ -26,7 +26,6 @@ BuildRequires : ncurses-dev
 BuildRequires : openssl-dev
 BuildRequires : pkgconfig(gnutls)
 BuildRequires : pkgconfig(ncurses)
-BuildRequires : pkgconfig(zlib)
 BuildRequires : readline-dev
 BuildRequires : zlib-dev
 
@@ -41,7 +40,6 @@ Summary: bin components for the lftp package.
 Group: Binaries
 Requires: lftp-data = %{version}-%{release}
 Requires: lftp-license = %{version}-%{release}
-Requires: lftp-man = %{version}-%{release}
 
 %description bin
 bin components for the lftp package.
@@ -62,6 +60,8 @@ Requires: lftp-lib = %{version}-%{release}
 Requires: lftp-bin = %{version}-%{release}
 Requires: lftp-data = %{version}-%{release}
 Provides: lftp-devel = %{version}-%{release}
+Requires: lftp = %{version}-%{release}
+Requires: lftp = %{version}-%{release}
 
 %description dev
 dev components for the lftp package.
@@ -102,14 +102,24 @@ man components for the lftp package.
 
 
 %prep
-%setup -q -n lftp-4.8.4
+%setup -q -n lftp-4.9.1
+cd %{_builddir}/lftp-4.9.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1542400769
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1579195766
+# -Werror is for werrorists
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static --disable-rpath \
 --disable-silent-rules \
 --enable-largefile \
@@ -125,11 +135,11 @@ export SOURCE_DATE_EPOCH=1542400769
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1542400769
+export SOURCE_DATE_EPOCH=1579195766
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/lftp
-cp COPYING %{buildroot}/usr/share/package-licenses/lftp/COPYING
-cp lib/COPYING.LIB %{buildroot}/usr/share/package-licenses/lftp/lib_COPYING.LIB
+cp %{_builddir}/lftp-4.9.1/COPYING %{buildroot}/usr/share/package-licenses/lftp/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/lftp-4.9.1/lib/COPYING.LIB %{buildroot}/usr/share/package-licenses/lftp/44f7289042b71631acac29b2f143330d2da2479e
 %make_install
 %find_lang lftp
 
@@ -158,16 +168,16 @@ cp lib/COPYING.LIB %{buildroot}/usr/share/package-licenses/lftp/lib_COPYING.LIB
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/lftp/4.8.4/cmd-mirror.so
-/usr/lib64/lftp/4.8.4/cmd-sleep.so
-/usr/lib64/lftp/4.8.4/cmd-torrent.so
-/usr/lib64/lftp/4.8.4/liblftp-network.so
-/usr/lib64/lftp/4.8.4/liblftp-pty.so
-/usr/lib64/lftp/4.8.4/proto-file.so
-/usr/lib64/lftp/4.8.4/proto-fish.so
-/usr/lib64/lftp/4.8.4/proto-ftp.so
-/usr/lib64/lftp/4.8.4/proto-http.so
-/usr/lib64/lftp/4.8.4/proto-sftp.so
+/usr/lib64/lftp/4.9.1/cmd-mirror.so
+/usr/lib64/lftp/4.9.1/cmd-sleep.so
+/usr/lib64/lftp/4.9.1/cmd-torrent.so
+/usr/lib64/lftp/4.9.1/liblftp-network.so
+/usr/lib64/lftp/4.9.1/liblftp-pty.so
+/usr/lib64/lftp/4.9.1/proto-file.so
+/usr/lib64/lftp/4.9.1/proto-fish.so
+/usr/lib64/lftp/4.9.1/proto-ftp.so
+/usr/lib64/lftp/4.9.1/proto-http.so
+/usr/lib64/lftp/4.9.1/proto-sftp.so
 /usr/lib64/liblftp-jobs.so.0
 /usr/lib64/liblftp-jobs.so.0.0.0
 /usr/lib64/liblftp-tasks.so.0
@@ -175,8 +185,8 @@ cp lib/COPYING.LIB %{buildroot}/usr/share/package-licenses/lftp/lib_COPYING.LIB
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/lftp/COPYING
-/usr/share/package-licenses/lftp/lib_COPYING.LIB
+/usr/share/package-licenses/lftp/44f7289042b71631acac29b2f143330d2da2479e
+/usr/share/package-licenses/lftp/8624bcdae55baeef00cd11d5dfcfa60f68710a02
 
 %files man
 %defattr(0644,root,root,0755)

@@ -1115,6 +1115,7 @@ liblftp-tasks.so.0:_ZN7FileSet12SubtractDirsEPKS_
 liblftp-tasks.so.0:_ZN7FileSet12SubtractDirsEv
 liblftp-tasks.so.0:_ZN7FileSet12SubtractSameEPKS_i
 liblftp-tasks.so.0:_ZN7FileSet13SubtractNotInEPKS_
+liblftp-tasks.so.0:_ZN7FileSet14SubtractByNameEPKc
 liblftp-tasks.so.0:_ZN7FileSet15ExcludeCompoundEv
 liblftp-tasks.so.0:_ZN7FileSet15SubtractNotDirsEv
 liblftp-tasks.so.0:_ZN7FileSet15SubtractTimeCmpEM8FileInfoKFblEl
@@ -1366,6 +1367,7 @@ liblftp-tasks.so.0:_ZN9ResClientC2Ev
 liblftp-tasks.so.0:_ZN9ResClientD0Ev
 liblftp-tasks.so.0:_ZN9ResClientD1Ev
 liblftp-tasks.so.0:_ZN9ResClientD2Ev
+liblftp-tasks.so.0:_ZN9StringSet11default_cmpEPPKcS2_
 liblftp-tasks.so.0:_ZN9StringSet12AppendFormatEPKcz
 liblftp-tasks.so.0:_ZN9StringSet12InsertBeforeEiPKc
 liblftp-tasks.so.0:_ZN9StringSet3PopEi
@@ -1393,6 +1395,7 @@ liblftp-tasks.so.0:_ZNK10FileAccess12MkdirMakeSetEv
 liblftp-tasks.so.0:_ZNK10FileAccess12NextSameSiteEPS_
 liblftp-tasks.so.0:_ZNK10FileAccess13GetConnectURLEi
 liblftp-tasks.so.0:_ZNK10FileAccess14SameLocationAsEPKS_
+liblftp-tasks.so.0:_ZNK10FileAccess16GetNewLocationFAEv
 liblftp-tasks.so.0:_ZNK10FileAccess17ExpandTildeStaticEPKc
 liblftp-tasks.so.0:_ZNK10FileAccess17device_prefix_lenEPKc
 liblftp-tasks.so.0:_ZNK10FileAccess4PatheqERKS0_
@@ -1404,6 +1407,7 @@ liblftp-tasks.so.0:_ZNK10StatusLine10WriteTitleEPKci
 liblftp-tasks.so.0:_ZNK10time_tuple9to_doubleEv
 liblftp-tasks.so.0:_ZNK12DummyNoProto5CloneEv
 liblftp-tasks.so.0:_ZNK12DummyNoProto8GetProtoEv
+liblftp-tasks.so.0:_ZNK12FileCopyPeer12ShouldRenameEv
 liblftp-tasks.so.0:_ZNK12LsCacheEntry12EstimateSizeEv
 liblftp-tasks.so.0:_ZNK12TimeInterval11GetTimeoutUERK4Time
 liblftp-tasks.so.0:_ZNK12TimeInterval8FinishedERK4Time
@@ -1510,6 +1514,7 @@ liblftp-tasks.so.0:c_strncasecmp
 liblftp-tasks.so.0:c_tolower
 liblftp-tasks.so.0:c_toupper
 liblftp-tasks.so.0:clone_quoting_options
+liblftp-tasks.so.0:current_timespec
 liblftp-tasks.so.0:dir_len
 liblftp-tasks.so.0:dup_cloexec
 liblftp-tasks.so.0:filemodestring
@@ -1608,6 +1613,8 @@ liblftp-tasks.so.0:set_cloexec_flag
 liblftp-tasks.so.0:set_custom_quoting
 liblftp-tasks.so.0:set_quoting_flags
 liblftp-tasks.so.0:set_quoting_style
+liblftp-tasks.so.0:setlocale_null
+liblftp-tasks.so.0:setlocale_null_r
 liblftp-tasks.so.0:sha1_buffer
 liblftp-tasks.so.0:sha1_finish_ctx
 liblftp-tasks.so.0:sha1_init_ctx
@@ -1642,7 +1649,6 @@ liblftp-tasks.so.0:xnrealloc
 liblftp-tasks.so.0:xrealloc
 liblftp-tasks.so.0:xstrdup
 liblftp-tasks.so.0:xstrtol
-liblftp-tasks.so.0:xstrtol_fatal
 liblftp-tasks.so.0:xstrtoul
 liblftp-tasks.so.0:xstrtoumax
 liblftp-tasks.so.0:xsum

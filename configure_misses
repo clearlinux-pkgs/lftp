@@ -1,7 +1,11 @@
 Configure miss: g++ option to enable C++11 features
 Configure miss: whether g++ supports _Bool type
+Configure miss: 32-bit host C ABI
+Configure miss: CFLocaleCopyPreferredLanguages
 Configure miss: crtdefs.h
 Configure miss: fpurge
+Configure miss: whether the compiler is clang
+Configure miss: compiler option needed when checking for declarations
 Configure miss: st_dm_mode in struct stat
 Configure miss: whether strmode is declared
 Configure miss: whether fflush works on input streams
@@ -9,6 +13,7 @@ Configure miss: whether printf supports the 'n' directive
 Configure miss: whether fpurge is declared
 Configure miss: _fseeki64
 Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
+Configure miss: whether mbrtowc stores incomplete characters
 Configure miss: whether mbswidth is declared in <wchar.h>
 Configure miss: __mktime_internal
 Configure miss: struct msghdr.msg_accrights
@@ -24,6 +29,9 @@ Configure miss: ncurses/curses.h
 Configure miss: ncurses/term.h usability
 Configure miss: ncurses/term.h presence
 Configure miss: ncurses/term.h
+Configure miss: sys/stropts.h usability
+Configure miss: sys/stropts.h presence
+Configure miss: sys/stropts.h
 Configure miss: _getpty
 Configure miss: idn2.h usability
 Configure miss: idn2.h presence
