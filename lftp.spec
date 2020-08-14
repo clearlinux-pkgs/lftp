@@ -5,12 +5,12 @@
 # Source0 file verified with key 0xA824BB69F2A99A18 (lav@yars.free.net)
 #
 Name     : lftp
-Version  : 4.9.1
-Release  : 6
-URL      : http://lftp.yar.ru/ftp/lftp-4.9.1.tar.xz
-Source0  : http://lftp.yar.ru/ftp/lftp-4.9.1.tar.xz
-Source1  : http://lftp.yar.ru/ftp/lftp-4.9.1.tar.xz.asc
-Summary  : Sophisticated command line based FTP client
+Version  : 4.9.2
+Release  : 7
+URL      : http://lftp.yar.ru/ftp/lftp-4.9.2.tar.xz
+Source0  : http://lftp.yar.ru/ftp/lftp-4.9.2.tar.xz
+Source1  : http://lftp.yar.ru/ftp/lftp-4.9.2.tar.xz.asc
+Summary  : Sophisticated CLI file transfer program
 Group    : Development/Tools
 License  : GPL-3.0 LGPL-2.0
 Requires: lftp-bin = %{version}-%{release}
@@ -26,8 +26,8 @@ BuildRequires : ncurses-dev
 BuildRequires : openssl-dev
 BuildRequires : pkgconfig(gnutls)
 BuildRequires : pkgconfig(ncurses)
+BuildRequires : pkgconfig(zlib)
 BuildRequires : readline-dev
-BuildRequires : zlib-dev
 
 %description
 lftp is CLI file transfer program. It supports FTP, HTTP, FISH and
@@ -60,7 +60,6 @@ Requires: lftp-lib = %{version}-%{release}
 Requires: lftp-bin = %{version}-%{release}
 Requires: lftp-data = %{version}-%{release}
 Provides: lftp-devel = %{version}-%{release}
-Requires: lftp = %{version}-%{release}
 Requires: lftp = %{version}-%{release}
 
 %description dev
@@ -102,23 +101,22 @@ man components for the lftp package.
 
 
 %prep
-%setup -q -n lftp-4.9.1
-cd %{_builddir}/lftp-4.9.1
+%setup -q -n lftp-4.9.2
+cd %{_builddir}/lftp-4.9.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579195766
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1597416653
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static --disable-rpath \
 --disable-silent-rules \
@@ -135,11 +133,11 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1579195766
+export SOURCE_DATE_EPOCH=1597416653
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/lftp
-cp %{_builddir}/lftp-4.9.1/COPYING %{buildroot}/usr/share/package-licenses/lftp/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/lftp-4.9.1/lib/COPYING.LIB %{buildroot}/usr/share/package-licenses/lftp/44f7289042b71631acac29b2f143330d2da2479e
+cp %{_builddir}/lftp-4.9.2/COPYING %{buildroot}/usr/share/package-licenses/lftp/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/lftp-4.9.2/lib/COPYING.LIB %{buildroot}/usr/share/package-licenses/lftp/44f7289042b71631acac29b2f143330d2da2479e
 %make_install
 %find_lang lftp
 
@@ -168,16 +166,16 @@ cp %{_builddir}/lftp-4.9.1/lib/COPYING.LIB %{buildroot}/usr/share/package-licens
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/lftp/4.9.1/cmd-mirror.so
-/usr/lib64/lftp/4.9.1/cmd-sleep.so
-/usr/lib64/lftp/4.9.1/cmd-torrent.so
-/usr/lib64/lftp/4.9.1/liblftp-network.so
-/usr/lib64/lftp/4.9.1/liblftp-pty.so
-/usr/lib64/lftp/4.9.1/proto-file.so
-/usr/lib64/lftp/4.9.1/proto-fish.so
-/usr/lib64/lftp/4.9.1/proto-ftp.so
-/usr/lib64/lftp/4.9.1/proto-http.so
-/usr/lib64/lftp/4.9.1/proto-sftp.so
+/usr/lib64/lftp/4.9.2/cmd-mirror.so
+/usr/lib64/lftp/4.9.2/cmd-sleep.so
+/usr/lib64/lftp/4.9.2/cmd-torrent.so
+/usr/lib64/lftp/4.9.2/liblftp-network.so
+/usr/lib64/lftp/4.9.2/liblftp-pty.so
+/usr/lib64/lftp/4.9.2/proto-file.so
+/usr/lib64/lftp/4.9.2/proto-fish.so
+/usr/lib64/lftp/4.9.2/proto-ftp.so
+/usr/lib64/lftp/4.9.2/proto-http.so
+/usr/lib64/lftp/4.9.2/proto-sftp.so
 /usr/lib64/liblftp-jobs.so.0
 /usr/lib64/liblftp-jobs.so.0.0.0
 /usr/lib64/liblftp-tasks.so.0

@@ -813,6 +813,7 @@ liblftp-tasks.so.0:_ZN14DirectedBuffer6PutEOFEv
 liblftp-tasks.so.0:_ZN14FileCopyPeerFA10GetRealPosEv
 liblftp-tasks.so.0:_ZN14FileCopyPeerFA10RemoveFileEv
 liblftp-tasks.so.0:_ZN14FileCopyPeerFA11OpenSessionEv
+liblftp-tasks.so.0:_ZN14FileCopyPeerFA11UseTempFileEPKc
 liblftp-tasks.so.0:_ZN14FileCopyPeerFA12PrepareToDieEv
 liblftp-tasks.so.0:_ZN14FileCopyPeerFA14ResumeInternalEv
 liblftp-tasks.so.0:_ZN14FileCopyPeerFA15SuspendInternalEv
@@ -1515,7 +1516,6 @@ liblftp-tasks.so.0:c_tolower
 liblftp-tasks.so.0:c_toupper
 liblftp-tasks.so.0:clone_quoting_options
 liblftp-tasks.so.0:current_timespec
-liblftp-tasks.so.0:dir_len
 liblftp-tasks.so.0:dup_cloexec
 liblftp-tasks.so.0:filemodestring
 liblftp-tasks.so.0:fpurge
@@ -1559,7 +1559,6 @@ liblftp-tasks.so.0:md5_process_block
 liblftp-tasks.so.0:md5_process_bytes
 liblftp-tasks.so.0:md5_read_ctx
 liblftp-tasks.so.0:md5_stream
-liblftp-tasks.so.0:mdir_name
 liblftp-tasks.so.0:memcasecmp
 liblftp-tasks.so.0:mktime_internal
 liblftp-tasks.so.0:mktime_z
@@ -1623,7 +1622,6 @@ liblftp-tasks.so.0:sha1_process_bytes
 liblftp-tasks.so.0:sha1_read_ctx
 liblftp-tasks.so.0:sha1_stream
 liblftp-tasks.so.0:stat_time_normalize
-liblftp-tasks.so.0:strip_trailing_slashes
 liblftp-tasks.so.0:strmode
 liblftp-tasks.so.0:strnlen1
 liblftp-tasks.so.0:timespec_cmp

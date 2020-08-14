@@ -1,8 +1,8 @@
-4.9.1
+4.9.2
 bison
 expat-dev
 glibc-locale
 ncurses-dev
 openssl-dev
 pkgconfig(ncurses)
-zlib-dev
+pkgconfig(zlib)
